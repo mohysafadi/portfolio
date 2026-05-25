@@ -1,0 +1,127 @@
+/* 1. Reset */
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+
+:root {
+    --bg-color: #0f172a;        /* هذا هو الأزرق الغامق (Midnight Blue) */
+    --section-bg: #1e293b;      /* هذا لون أزرق أفتح قليلاً ليبرز الأقسام */
+    --text-color: #ffffff;
+    --accent-color: #3498db;    /* لون أزرق فاتح "مضيء" ليكون لون التمييز */
+}
+
+body { background-color: var(--bg-color); color: var(--text-color); line-height: 1.6; }
+
+/* 2. Navbar */
+header { background-color: var(--section-bg); padding: 20px 50px; }
+nav { display: flex; justify-content: space-between; align-items: center; }
+nav ul { list-style: none; display: flex; gap: 20px; }
+nav a { color: var(--text-color); text-decoration: none; }
+nav a:hover { color: var(--accent-color); }
+
+/* 3. Hero Section */
+#hero { display: flex; justify-content: space-between; align-items: center; padding: 100px 50px; min-height: 80vh; }
+.hero-content { max-width: 600px; }
+.hero-content h2 { font-size: 3rem; color: var(--accent-color); margin-bottom: 20px; }
+.hero-image { width: 350px; height: 350px; border-radius: 50%; overflow: hidden; border: 4px solid var(--accent-color); display: flex; justify-content: center; align-items: center; }
+.hero-image img { width: 100%; height: 100%; object-fit: cover; }
+
+/* 4. Skills Section (تأكدنا هنا من التوسيط) */
+#skills { padding: 80px 50px; background-color: var(--bg-color); text-align: center; }
+.section-title { font-size: 2.5rem; margin-bottom: 40px; }
+.section-title::after { content: ''; display: block; width: 60px; height: 4px; background-color: var(--accent-color); margin: 15px auto 0; }
+.category-title { font-size: 1.8rem; color: var(--accent-color); margin: 40px 0 20px; }
+.skills-grid { display: flex; justify-content: center; flex-wrap: wrap; gap: 20px; }
+.skill-card { background-color: var(--section-bg); border: 1px solid #333; padding: 15px 30px; border-radius: 8px; font-weight: bold; transition: 0.3s; }
+.skill-card:hover { border-color: var(--accent-color); transform: translateY(-5px); }
+/* تنسيق قسم المشاريع */
+#projects {
+    padding: 80px 50px;
+    background-color: var(--section-bg); /* لون خلفية مختلف قليلاً للتمييز */
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* ترتيب تلقائي حسب حجم الشاشة */
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.project-card {
+    background-color: var(--bg-color);
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px solid #333;
+    transition: 0.3s;
+}
+
+.project-card:hover {
+    border-color: var(--accent-color);
+    transform: translateY(-10px);
+}
+
+.project-card h3 {
+    margin-bottom: 15px;
+    color: var(--accent-color);
+}
+
+.project-card p {
+    margin-bottom: 20px;
+    color: #ccc;
+}
+
+/* زر صغير للمشاريع */
+.btn-small {
+    display: inline-block;
+    padding: 8px 16px;
+    border: 1px solid var(--accent-color);
+    color: var(--accent-color);
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.btn-small:hover {
+    background-color: var(--accent-color);
+    color: white;
+}
+/* تنسيق قسم التواصل */
+#contact {
+    padding: 80px 50px;
+    background-color: var(--bg-color);
+    text-align: center;
+}
+
+#contact p {
+    margin-bottom: 30px;
+    color: #ccc;
+    font-size: 1.1rem;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.contact-link {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    border: 1px solid var(--accent-color);
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.contact-link:hover {
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+}
+/* تنسيق الموبايل */
+@media (max-width: 768px) {
+    header, #hero, #skills, #projects, #contact { padding: 40px 20px; }
+    #hero { flex-direction: column; text-align: center; }
+    .hero-image { width: 250px; height: 250px; margin-bottom: 30px; }
+    nav { flex-direction: column; gap: 15px; }
+    .section-title { font-size: 1.8rem; }
+}
